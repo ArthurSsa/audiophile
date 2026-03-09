@@ -1,14 +1,43 @@
-Projeto Final: audiophile
-Curso: Residência em TIC 29 - Web 3.0
+Audiophile - Showroom Hi-Fi em Realidade Virtual
 
-Descrição Geral:
-Este projeto apresenta uma experiência imersiva inicial em Realidade Virtual, desenvolvida na Unity com o Meta XR SDK. O cenário construído é um "Refúgio Audiófilo Low Poly", um ambiente focado em relaxamento e alta fidelidade sonora. O espaço contém diversos objetos 3D organizados de forma coerente (setup de áudio de mesa, PC, poltrona de descanso, caixas de som e itens de decoração), um piso navegável e um Skybox configurado para imersão visual.
+Desenvolvedor: Arthur
 
-Instruções Básicas de Uso:
-A movimentação inicial foi configurada para ser realizada totalmente no PC, sem a necessidade de funcionar apenas com o óculos de VR.
-- Teclas W, A, S, D: Caminhar pelo ambiente.
-- Mouse: Olhar ao redor (rotação da câmera).
-- Tecla ESC: Libera o cursor do mouse da tela da aplicação.
+Status do Projeto: Finalizado (Gold Master)
 
-Reflexão sobre o Aprendizado:
-Durante a construção deste ambiente, o principal desafio e aprendizado foi dominar o fluxo completo de configuração técnica do XR Plugin Management e preparar o Build Settings para a plataforma Android (Meta Quest). Além disso, a prática de estruturar uma hierarquia limpa, aplicar materiais em modelos 3D importados e adaptar o sistema de Input clássico da Unity para conviver com os pacotes do Meta SDK consolidaram uma base técnica muito forte para futuros desenvolvimentos em Realidade Estendida.
+Plataforma: Unity 6 / Meta XR SDK (Android)
+
+📋 Descrição do Projeto
+
+O Audiophile é um simulador imersivo que explora o conceito de "Design Sensorial" e "Silêncio Acústico". O utilizador é colocado num quarto técnico e deve gerir fontes de ruído (Vinyl e TV) para atingir a pureza sonora necessária para utilizar os fones de alta fidelidade.
+
+🛠️ Desafios Técnicos Superados
+
+1. View Model (Luva 3D)
+
+Clipping: Resolvido o corte da malha através do ajuste do Near Clipping Plane da câmara para 0.01.
+
+Sway & Clamp: Implementado sistema de balanço inercial que mantém a luva no campo de visão, independentemente da velocidade do jogador (ajustada para 6.0).
+
+Animação Procedural: O clique combina translação frontal (0.75f) e rotação em Z (-42.53f) para simular o movimento tátil de alcance.
+
+2. Lógica de Sequência e Silêncio
+
+Implementado um sistema de fases (State Machine) que obriga o utilizador a silenciar a sala antes de permitir a ativação do áudio 2D imersivo nos fones.
+
+3. UI e Navegação (UX)
+
+HUD Checklist: Localizado no topo central, com textos curtos e feedback visual imediato (ícone muda para verde via Corrotina C#).
+
+Navegação Assistida: Seta flutuante (Seta_Indicadora) que se desloca dinamicamente para o próximo alvo da missão.
+
+📂 Organização de Assets
+
+/Videos: Clips de vinil para a Render Texture da TV.
+
+/Musics: Áudios espaciais e 2D.
+
+/Scripts: Lógica principal no GerenciadorAudiophile.cs.
+
+/Materials: Materiais extraídos e calibrados para o Universal Render Pipeline (URP).
+
+Projeto desenvolvido para a Residência em TIC 29 - Trilha Web 3.0.
